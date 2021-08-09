@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import ReposList from './components/reposList';
+import ReposList from './containers/reposList';
 
 function App() {
   const [reachedBot, setReachedBot] =useState(false);

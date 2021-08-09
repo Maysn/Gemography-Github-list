@@ -2,3 +2,7 @@ body {
   background-color: black;
   color: white;
 }
+.App{
+  overflow-y: scroll;
+  height: 100vh;
+}

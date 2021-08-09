@@ -18,7 +18,7 @@ useEffect(()=> {
         .then(data => setRepositoriesList(RepositoriesList => RepositoriesList.concat(data.items)))
         setCount(count => count + 1)
     }
-},[reachedBot])
+},[reachedBot, count])
 
 console.log(count)
 

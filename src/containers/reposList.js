@@ -30,7 +30,7 @@ function ReposList({ reachedBot, setReachedBot }) {
           setCount((count) => count + 1);
         });
     }
-  }, [reachedBot, count]);
+  }, [reachedBot, setReachedBot, count]);
   console.log(count);
 
   const repositoryDetails = RepositoriesList?.map((repo) => {

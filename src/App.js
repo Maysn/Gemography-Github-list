@@ -5,9 +5,11 @@ import ReposList from './containers/reposList';
 function App() {
   const [reachedBot, setReachedBot] =useState(false);
   const handleScroll = (e) => {
-    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    const bottom = Math.ceil(e.target.scrollHeight - e.target.scrollTop) === e.target.clientHeight;
     if (bottom) { 
         console.log("bottom")
+        console.log(e.target.clientHeight)
+        console.log(e.target.scrollHeight - e.target.scrollTop)
         setReachedBot(true);
     }
  }  

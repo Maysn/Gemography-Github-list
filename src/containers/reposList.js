@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import RepoCard from "../components/repo-card";
 
 function ReposList({ reachedBot, setReachedBot }) {
   const [RepositoriesList, setRepositoriesList] = useState();
@@ -14,7 +15,7 @@ function ReposList({ reachedBot, setReachedBot }) {
   }, []);
   console.log(RepositoriesList);
 
-  //   fetching following lists on reachsing bottom
+  //   fetching following lists on reaching bottom
   useEffect(() => {
     if (reachedBot) {
       fetch(
@@ -33,25 +34,13 @@ function ReposList({ reachedBot, setReachedBot }) {
   }, [reachedBot, setReachedBot, count]);
   console.log(count);
 
-  const repositoryDetails = RepositoriesList?.map((repo) => {
-    return (
-      <div key={repo.full_name} className="repository">
-        <div className="repository__avatar">
-          <img src={repo.owner.avatar_url} alt="Repoistory Avatar" />
-        </div>
-        <div className="repository__details">
-          <h3 className="repository__name">{repo.name}</h3>
-          <div className="repository__description">{repo.description}</div>
-          <div className="repository__stats">
-            <span className="repository__stars">{repo.stargazers_count}</span>
-            <span className="repository__issues">{repo.open_issues_count}</span>
-            <span className="repository__date">{repo.pushed_at}</span>
-          </div>
-        </div>
-      </div>
-    );
-  });
-  return <div>{repositoryDetails}</div>;
+  return (
+    <div className="repositories">
+      {RepositoriesList?.map((repo) => (
+        <RepoCard repo={repo} />
+      ))}
+    </div>
+  );
 }
 
 export default ReposList;

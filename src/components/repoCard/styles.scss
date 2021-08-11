@@ -1,0 +1,107 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.repository {
+  display: flex;
+  align-items: flex-start;
+  width: 95%;
+  border: $text-color solid 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin: 0.3rem 0;
+  padding: 0.7rem 0.5rem;
+
+  &__avatar {
+    width: 60px;
+    margin-right: 0.7rem;
+
+    & img {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include breakpoint-up(medium) {
+      width: 100px;
+      margin-right: 1rem;
+
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @include breakpoint-up(large) {
+      width: 120px;
+      margin-right: 1rem;
+
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__details {
+    width: 77%;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 0.7rem;
+    overflow-wrap: break-word;
+
+    @include breakpoint-up(medium) {
+      font-size: 1.3rem;
+    }
+    @include breakpoint-up(medium) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 0.7rem;
+    text-align: start;
+    overflow-wrap: break-word;
+
+    @include breakpoint-up(medium) {
+      font-size: 1.022rem;
+    }
+    @include breakpoint-up(large) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+
+    & span {
+      &:not(:last-child) {
+        margin-right: 1rem;
+        border: $text-color solid 0.1rem;
+        border-radius: 3px;
+        padding: 0.227rem;
+      }
+    }
+
+    @include breakpoint-up(medium) {
+      font-size: 0.9rem;
+    }
+    @include breakpoint-up(large) {
+      font-size: 1rem;
+    }
+  }
+
+  &__stars {
+    background-color: #2b1f3d;
+  }
+
+  &__issues {
+    background-color: #006992;
+  }
+
+  &__date {
+  }
+}

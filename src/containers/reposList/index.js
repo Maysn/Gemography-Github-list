@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import RepoCard from "../components/repo-card";
+import RepoCard from "../../components/repoCard";
+import "./styles.scss";
 
 function ReposList({ reachedBot, setReachedBot }) {
   const [RepositoriesList, setRepositoriesList] = useState();
@@ -37,7 +38,7 @@ function ReposList({ reachedBot, setReachedBot }) {
   return (
     <div className="repositories">
       {RepositoriesList?.map((repo) => (
-        <RepoCard repo={repo} />
+        <RepoCard key={repo.full_name} repo={repo} />
       ))}
     </div>
   );

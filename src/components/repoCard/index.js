@@ -1,8 +1,10 @@
 import React from "react";
+import { parseDate } from "../../utils/date";
+import "./styles.scss";
 
 function RepoCard({ repo }) {
   return (
-    <div key={repo.full_name} className="repository">
+    <div className="repository">
       <div className="repository__avatar">
         <img src={repo.owner.avatar_url} alt="Repoistory Avatar" />
       </div>
@@ -11,19 +13,13 @@ function RepoCard({ repo }) {
         <div className="repository__description">{repo.description}</div>
         <div className="repository__stats">
           <span className="repository__stars">
-            Stars: {repo.stargazers_count}
+            Stars: <strong>{repo.stargazers_count}</strong>
           </span>
           <span className="repository__issues">
-            Issues: {repo.open_issues_count}
+            Issues: <strong>{repo.open_issues_count}</strong>
           </span>
           <span className="repository__date">
-            submitted{" "}
-            {new Date(repo.pushed_at)
-              .toDateString()
-              .split(" ")
-              .slice(1)
-              .join(" ")}{" "}
-            by {repo.owner.login}
+            submitted {parseDate(repo.pushed_at)} by {repo.owner.login}
           </span>
         </div>
       </div>

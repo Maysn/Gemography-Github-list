@@ -11,3 +11,5 @@ After the logic was done, I started working on styling it. Began by doing mobile
 added some mixins for bigger screen sizes to have it responsive and looking good on different screen sizes,
 and then i tried picking my colors, and thought about adding a background color to both "Stars" and "Issues"
 to make them more noticeable for the user.
+
+Run by using ```npm start```
